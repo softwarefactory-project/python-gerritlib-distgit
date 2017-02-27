@@ -10,7 +10,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.6.0
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Client library for accessing Gerrit
 License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/%{pypi_name}
@@ -19,6 +19,7 @@ Source0:        https://files.pythonhosted.org/packages/source/g/%{pypi_name}/%{
 BuildArch:      noarch
 
 BuildRequires:  python2-devel
+BuildRequires:	python2-rpm-macros
 BuildRequires:  python2-setuptools
 BuildRequires:  python2-pbr
 BuildRequires:  python2-hacking
@@ -62,6 +63,9 @@ rm -rf requirements.txt test-requirements.txt
 %{python2_sitelib}/%{pypi_name}
 
 %changelog
+* Mon Feb 27 2017 Matthieu Huin <mhuin@redhat.com> - 0.6.0-6
+- Add python rpm macros
+
 * Mon Feb 27 2017 Matthieu Huin <mhuin@redhat.com> - 0.6.0-5
 - Force rebuild
 
