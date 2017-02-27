@@ -10,7 +10,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.6.0
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Client library for accessing Gerrit
 License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/%{pypi_name}
@@ -62,6 +62,9 @@ rm -rf requirements.txt test-requirements.txt
 %{python2_sitelib}/%{pypi_name}
 
 %changelog
+* Mon Feb 27 2017 Matthieu Huin <mhuin@redhat.com> - 0.6.0-5
+- Force rebuild
+
 * Fri Feb 24 2017 Matthieu Huin <mhuin@redhat.com> - 0.6.0-4
 - Lightweight packaging for Software Factory
 
