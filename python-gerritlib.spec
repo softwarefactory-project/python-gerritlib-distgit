@@ -10,7 +10,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.6.0
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        Client library for accessing Gerrit
 License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/%{pypi_name}
@@ -48,10 +48,10 @@ rm -rf %{pypi_name}.egg-info
 rm -rf requirements.txt test-requirements.txt
 
 %build
-%py2_build
+%{__python2} setup.py build
 
 %install
-%py2_install
+%{__python2} setup.py install --skip-build --root %{buildroot}
 
 %check
 %{__python2} setup.py test
@@ -63,6 +63,9 @@ rm -rf requirements.txt test-requirements.txt
 %{python2_sitelib}/%{pypi_name}
 
 %changelog
+* Mon Feb 28 2017 Matthieu Huin <mhuin@redhat.com> - 0.6.0-7
+- Do not use EPEL macros
+
 * Mon Feb 27 2017 Matthieu Huin <mhuin@redhat.com> - 0.6.0-6
 - Add python rpm macros
 
