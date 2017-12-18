@@ -10,7 +10,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.6.0
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        Client library for accessing Gerrit
 License:        ASL 2.0
 URL:            https://pypi.python.org/pypi/%{pypi_name}
@@ -22,7 +22,7 @@ BuildRequires:  python2-devel
 BuildRequires:  python2-setuptools
 BuildRequires:  python2-pbr
 BuildRequires:  python2-hacking
-BuildRequires:  python2-paramiko
+BuildRequires:  python-paramiko
 
 %description
 %{desc}
@@ -30,7 +30,7 @@ BuildRequires:  python2-paramiko
 %package -n python2-%{pypi_name}
 Summary:        %{summary}
 Requires:       python2-pbr
-Requires:       python2-paramiko
+Requires:       python-paramiko
 %{?python_provide:%python_provide python2-%{pypi_name}}
 
 %description -n python2-%{pypi_name}
@@ -62,6 +62,9 @@ rm -rf requirements.txt test-requirements.txt
 %{python2_sitelib}/%{pypi_name}
 
 %changelog
+* Mon Dec 18 2017 Tristan Cacqueray <tdecacqu@redhat.com> - 0.6.0-8
+- Switch requirement to python-paramiko instead of python2-paramiko
+
 * Mon Feb 28 2017 Matthieu Huin <mhuin@redhat.com> - 0.6.0-7
 - Do not use EPEL macros
 
